@@ -7,14 +7,20 @@
 //
 
 #include <iostream>
-#include <fstream>
+#include "Grafo.h"
 
 using namespace std;
 
 //Grafos
 
 int main() {
+    string Archivo; //nombre del archivo
     
-    cout << "Hello, World!\n";
+    cout << "Cual es el nombre de tu archivo? "<< endl;
+    cin >> Archivo;
+    
+    Grafo Grafo(Archivo);
+    Grafo.BreathFirst();
+    
     return 0;
 }

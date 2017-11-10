@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		0B0A8AAE1FB5FAA300D6B29D /* Grafos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grafos; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0A8AB11FB5FAA300D6B29D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0B0A8AB81FB600A200D6B29D /* Grafo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grafo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0B0A8AB11FB5FAA300D6B29D /* main.cpp */,
+				0B0A8AB81FB600A200D6B29D /* Grafo.h */,
 			);
 			path = Grafos;
 			sourceTree = "<group>";

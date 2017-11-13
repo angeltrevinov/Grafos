@@ -33,6 +33,14 @@ int main() {
             case 2:
                 Grafo.DepthFirst();
             break;
+            case 3:
+                int x, y;
+                cout << "Cual es tu origen?" << endl;
+                cin >> x;
+                cout << "Cual es tu destino?" << endl;
+                cin >> y;
+                Grafo.Buscar(x, y);
+            break;
                 
         }
         cout<< endl;

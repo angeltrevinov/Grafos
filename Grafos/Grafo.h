@@ -17,8 +17,6 @@ class Grafo{
 private:
     int Lugares;
     int Rutas[500][500];
-    int Fila[1000] = {-1};
-    int Despliega[1000] = {-1};
     
 public:
     Grafo(string archivo){
@@ -35,49 +33,38 @@ public:
         }
     }
     
-    
-    void BreathFirst(){
-        int Procesado; //para saber en que origen estamos
-        int Index = 0; // Para la fila
-        int j=0; //para el despliega
-        bool Repite = false; //para ver que no se repite
-        
-        Fila[0] = 0;//pone el primer indicie
-        while(Fila[0] != -1){ //mientras que no este vacia
-            
-            //para ver si se repite el numero que vas a insertar a despliega
-            for(int i = 0; i <= Index; i++){
-                if(Fila[0] != Fila[i]){
-                    Repite = true;
+    //BreadthFirst
+    void BreadthFirst(){
+        int Queue[7] = {-1};
+        int Origen = 0, Agregar = 0; //Origen como vas moviendote en el array y Agregar en como estas agregando los datos para Queue
+        bool Repite = false;
+        Queue[0] = Origen;
+        cout << Queue[0] <<" ";
+        while(Origen <= 4){ //recorres fila por fila y vas metiendo los que tienen camino y no se repiten
+            for(int i = 0; i < Lugares; i++){
+                for(int j = 0; j < Origen; j++){
+                    if(Queue[j] == Rutas[Queue[Origen]][i]){
+                        Repite = true;
+                    }
                 }
-            }
-            //si se repite, no lo agregas
-            if(Repite != true){
-                Despliega[j] = Fila[0];
-                j++;
-                
-            }
-            Repite = false;//regresa a false para hacerlo de nuevo
-            Procesado = Despliega[j];
-            
-            for(int i = 0; i < Lugares; i++){ //va insertando a la fila
-                if(Rutas[Procesado][i] != 0){
-                    Index++;
-                    Fila[Index] = i;
+                if(Rutas[Queue[Origen]][i] != 0 && Repite == false){
+                    Queue[Agregar] = i;
+                    Agregar++;
                 }
+                Repite = false;
             }
-            
-            for(int i = 0; i<Index; i++){ // mueve la fila para borrar el que se fue
-                Fila[i] = Fila[i+1];
-            }
-            Index--;
-            
+            Origen++;
         }
         
-        for(int i = 0; i < j; i++){ //despliega 
-            cout << Despliega[i]<< " ";
+        for(int i = 0; i < Lugares-1; i++){
+            cout << Queue[i] << " ";
         }
         cout << endl;
+    }
+    
+    //Depth First
+    void DepthFirst(){
+        
     }
     
 };

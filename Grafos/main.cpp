@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "Grafo.h"
 
 using namespace std;
@@ -14,13 +15,29 @@ using namespace std;
 //Grafos
 
 int main() {
-    string Archivo; //nombre del archivo
+    string Archivo;
+    int instruccion; //nombre del archivo
     
     cout << "Cual es el nombre de tu archivo? "<< endl;
     cin >> Archivo;
-    
     Grafo Grafo(Archivo);
-    Grafo.BreathFirst();
+    
+    do{
+        cout << "Que quieres hacer? \nBreadth First(1) \nDepth First(2) \nEncontrar camninosos(3) \nsalir(4)" << endl;
+        cin >> instruccion;
+        
+        switch(instruccion){
+            case 1:
+                Grafo.BreadthFirst();
+            break;
+            case 2:
+                Grafo.DepthFirst();
+            break;
+                
+        }
+        cout<< endl;
+        
+    }while(instruccion != 4 );
     
     return 0;
 }

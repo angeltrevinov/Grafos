@@ -69,7 +69,7 @@ public:
         Stack[tope] = 0; //agrega la posicion 0 al stack
         Despliega[0] = Stack[tope];
         while(Cont < 4){
-            for(int i = Lugares-1; i>= 0; i--){//para pasar por toas las filas de cada columna
+            for(int i = Lugares-1; i>= 0; i--){//para pasar por todas las filas de cada columna
                 if(Rutas[Despliega[Cont]][i] != 0){//existe una ruta
                     for(int j = 0; j < Lugares; j++){
                         if(i == Despliega[j])
@@ -93,11 +93,21 @@ public:
     }
     
     //buscar datos
-    int Buscar(int x, int y){
-        return 3;
+     //Dado dos nodos x e y, indicar si hay uno o varios caminos que lleven de x a y. En caso afirmativo, despliega el camino que se recorrio para encontrarlo 
+    bool Buscar(int x, int y){
+        cout << x << " ";
+            for(int i = 0; i < Lugares; i++){
+                if(Rutas[x][i] != 0){
+                    x = i;
+                    cout << x << " ";
+                }
+                if(x == y)
+                    return true;
+            }
+        return false;
     }
     
-};
+    };
 
 
 #endif /* Grafo_h */

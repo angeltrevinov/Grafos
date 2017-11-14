@@ -39,7 +39,11 @@ int main() {
                 cin >> x;
                 cout << "Cual es tu destino?" << endl;
                 cin >> y;
-                Grafo.Buscar(x, y);
+                if(Grafo.Buscar(x,y))
+                    cout <<"Existe camino" << endl;
+                else
+                    cout << "No existe camino" << endl;
+                    
             break;
                 
         }
